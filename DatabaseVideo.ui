@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(59, 59, 59)</string>
+  </property>
   <property name="tabShape">
    <enum>QTabWidget::Rounded</enum>
   </property>
@@ -20,11 +23,21 @@
    <widget class="QPushButton" name="Add_button">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>40</x>
       <y>330</y>
       <width>131</width>
       <height>101</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 10px;</string>
     </property>
     <property name="text">
      <string/>
@@ -39,6 +52,12 @@
       <height>100</height>
      </size>
     </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="Delete_button">
     <property name="geometry">
@@ -48,6 +67,13 @@
       <width>131</width>
       <height>101</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 10px;</string>
     </property>
     <property name="text">
      <string/>
@@ -72,6 +98,14 @@
       <height>101</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 10px;
+</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -87,6 +121,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="search_button">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>590</x>
@@ -94,6 +131,16 @@
       <width>131</width>
       <height>101</height>
      </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 10px;</string>
     </property>
     <property name="text">
      <string/>
@@ -108,15 +155,25 @@
       <height>90</height>
      </size>
     </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="Exit_button">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>220</x>
       <y>450</y>
       <width>321</width>
       <height>101</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 10px;</string>
     </property>
     <property name="text">
      <string/>
@@ -148,42 +205,6 @@
      <pixmap>Pictures/sorton.png</pixmap>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="lcdNumber">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>190</y>
-      <width>271</width>
-      <height>101</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>150</y>
-      <width>201</width>
-      <height>161</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>Pictures/library2.png</pixmap>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>747</width>
-     <height>21</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

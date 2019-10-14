@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Add</class>
+ <widget class="QDialog" name="Add">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(59, 59, 59)</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>241</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="Actor">
+    <item row="0" column="0">
+     <widget class="QLabel" name="Actorslabel">
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 8px;</string>
+      </property>
+      <property name="text">
+       <string>Actors</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="ActorInput">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 10px;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QDialogButtonBox" name="buttonBox_2">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>260</y>
+     <width>176</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));</string>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>115</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="FilmId">
+    <item>
+     <widget class="QLabel" name="FilmIdLabel">
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.5 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 8px;</string>
+      </property>
+      <property name="text">
+       <string>Film ID</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="FilmIdInput"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="Title">
+    <item row="0" column="0">
+     <widget class="QLabel" name="Titlelabel">
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 8px;</string>
+      </property>
+      <property name="text">
+       <string>Title</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="TitleInput">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 10px;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>221</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="ReleaseYear">
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="ReleaseYearInput">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 10px;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="ReleaseYearlabel">
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 8px;</string>
+      </property>
+      <property name="text">
+       <string>Release Year</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>190</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="Rating">
+    <item row="0" column="0">
+     <widget class="QLabel" name="Ratinglabel">
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.5 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 8px;</string>
+      </property>
+      <property name="text">
+       <string>Rating</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QDoubleSpinBox" name="RatingInput"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>160</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="Length">
+    <item row="0" column="0">
+     <widget class="QLabel" name="Lengthlabel">
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));
+border-style: outset;
+border-width: 2px;
+border: 1px solid grey;
+border-radius: 8px;</string>
+      </property>
+      <property name="text">
+       <string>Length</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QDoubleSpinBox" name="LengthInput">
+      <property name="font">
+       <font>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>buttonBox_2</zorder>
+  <zorder>LengthInput</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
