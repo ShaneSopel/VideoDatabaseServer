@@ -1,192 +1,140 @@
-# sopels temp server
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'DatabaseVideo.ui'
+#
+# Created by: PyQt5 UI code generator 5.10.1
+#
+# WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import socket
-import struct
-import sys
-import threading
-import time
-import os
- 
-#define multicast group
-multicast_group = ('239.0.0.1', 5007)
 
-# Create the datagram socket
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-# Set a timeout so the socket does not block indefinitely when trying
-# to receive datta
-sock.settimeout(None)
-
-
-# Set the time-to-live for messages to 1 so they do not go past the
-# local network segment.
-ttl = struct.pack('b', 1)
-sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, ttl)
-
-var = 2
-
-class Ui_TempService(object):
-    def setupUi(self, TempService):
-        TempService.setObjectName("TempService")
-        TempService.resize(800, 480)
-        self.centralwidget = QtWidgets.QWidget(TempService)
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(747, 600)
+        MainWindow.setStyleSheet("background-color: rgb(59, 59, 59)")
+        MainWindow.setTabShape(QtWidgets.QTabWidget.Rounded)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+#
+# ADD BUTTON
+#
+        self.Add_button = QtWidgets.QPushButton(self.centralwidget)
+        self.Add_button.setGeometry(QtCore.QRect(40, 330, 131, 101))
+        self.Add_button.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.Add_button.setStyleSheet("background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border: 1px solid grey;\n"
+"border-radius: 10px;")
+        self.Add_button.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("Pictures/add_button_.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Add_button.setIcon(icon)
+        self.Add_button.setIconSize(QtCore.QSize(100, 100))
+        self.Add_button.setDefault(False)
+        self.Add_button.setFlat(False)
+        self.Add_button.setObjectName("Add_button")
+#
+# DELETE BUTTON
+#       
+        self.Delete_button = QtWidgets.QPushButton(self.centralwidget)
+        self.Delete_button.setGeometry(QtCore.QRect(210, 330, 131, 101))
+        self.Delete_button.setStyleSheet("background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border: 1px solid grey;\n"
+"border-radius: 10px;")
+        self.Delete_button.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("Pictures/delete_button.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Delete_button.setIcon(icon1)
+        self.Delete_button.setIconSize(QtCore.QSize(100, 100))
+        self.Delete_button.setObjectName("Delete_button")
+#
+# VIEW BUTTON
+#
+        self.view_button = QtWidgets.QPushButton(self.centralwidget)
+        self.view_button.setGeometry(QtCore.QRect(400, 330, 131, 101))
+        self.view_button.setStyleSheet("background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border: 1px solid grey;\n"
+"border-radius: 10px;\n"
+"")
+        self.view_button.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("Pictures/view_button.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.view_button.setIcon(icon2)
+        self.view_button.setIconSize(QtCore.QSize(90, 90))
+        self.view_button.setObjectName("view_button")
+#
+# SEARCH BUTTON       
+#
+        self.search_button = QtWidgets.QPushButton(self.centralwidget)
+        self.search_button.setEnabled(True)
+        self.search_button.setGeometry(QtCore.QRect(590, 330, 131, 101))
+        self.search_button.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
+        self.search_button.setStyleSheet("background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border: 1px solid grey;\n"
+"border-radius: 10px;")
+        self.search_button.setText("")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("Pictures/search_button.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.search_button.setIcon(icon3)
+        self.search_button.setIconSize(QtCore.QSize(90, 90))
+        self.search_button.setAutoDefault(False)
+        self.search_button.setObjectName("search_button")
+#
+# EXIT BUTTON
+#       
+        self.Exit_button = QtWidgets.QPushButton(self.centralwidget)
+        self.Exit_button.setGeometry(QtCore.QRect(220, 450, 321, 101))
+        self.Exit_button.setStyleSheet("background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0.7 rgba(59, 59, 59), stop:1 rgba(255, 255, 255, 255));\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border: 1px solid grey;\n"
+"border-radius: 10px;")
+        self.Exit_button.setText("")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("Pictures/exit_button.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Exit_button.setIcon(icon4)
+        self.Exit_button.setIconSize(QtCore.QSize(100, 80))
+        self.Exit_button.setObjectName("Exit_button")
 
-        # the three buttons
-        # Shutdown the program
-        self.shutDown = QtWidgets.QPushButton(self.centralwidget)
-        self.shutDown.setGeometry(QtCore.QRect(90, 330, 131, 81))
-        self.shutDown.setObjectName("ShutDown")
-        self.shutDown.clicked.connect(self.shutdownIt)
+#
+# SORTON LOGO
+#
+        self.Sorton = QtWidgets.QLabel(self.centralwidget)
+        self.Sorton.setGeometry(QtCore.QRect(130, 20, 511, 131))
+        self.Sorton.setText("")
+        self.Sorton.setPixmap(QtGui.QPixmap("Pictures/sorton.png"))
+        self.Sorton.setObjectName("Sorton")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
 
-        # Reboot the program
-        self.reboot = QtWidgets.QPushButton(self.centralwidget)
-        self.reboot.setGeometry(QtCore.QRect(260, 330, 131, 81))
-        self.reboot.setObjectName("Reboot")
-        self.reboot.clicked.connect(self.rebootIt)
-
-        # Exit the program
-        self.exit = QtWidgets.QPushButton(self.centralwidget)
-        self.exit.setGeometry(QtCore.QRect(420, 330, 131, 81))
-        self.exit.setObjectName("Exit")
-        self.exit.clicked.connect(self.closeIt)
-
-        # lcd inputs and their icons
-        self.Temp = QtWidgets.QLCDNumber(self.centralwidget)
-        self.Temp.setGeometry(QtCore.QRect(485, 40, 300, 81))
-        self.Temp.setObjectName("Temp")
-        self.Humid = QtWidgets.QLCDNumber(self.centralwidget)
-        self.Humid.setGeometry(QtCore.QRect(485, 160, 300, 81))
-        self.Humid.setObjectName("Humid")
-        self.TempImg = QtWidgets.QLabel(self.centralwidget)
-        self.TempImg.setGeometry(QtCore.QRect(425, 60, 50, 50))
-        self.TempImg.setText("")
-        self.TempImg.setPixmap(QtGui.QPixmap("Pictures/temp.jpg"))
-        self.TempImg.setObjectName("TempImg")
-        self.HumidImg = QtWidgets.QLabel(self.centralwidget)
-        self.HumidImg.setGeometry(QtCore.QRect(425, 180, 50, 50))
-        self.HumidImg.setText("")
-        self.HumidImg.setPixmap(QtGui.QPixmap("Pictures/humid.jpeg"))
-        self.HumidImg.setObjectName("HumidImg")
-
-        # this section of code handles the labels for the gui
-        # the labels are the server icons.
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(-10, 10, 151, 151))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("Pictures/server.png"))
-        self.label.setObjectName("label")
-        
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(120, 10, 151, 151))
-        self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("Pictures/server.png"))
-        self.label_2.setObjectName("label_2")
-        
-        self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(250, 10, 151, 151))
-        self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("Pictures/server.png"))
-        self.label_3.setObjectName("label_3")
-        
-        self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(-10, 180, 151, 151))
-        self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("Pictures/server.png"))
-        self.label_4.setObjectName("label_4")
-        
-        self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(120, 180, 151, 151))
-        self.label_5.setText("")
-        self.label_5.setPixmap(QtGui.QPixmap("Pictures/server.png"))
-        self.label_5.setObjectName("label_5")
-        
-        self.label_6 = QtWidgets.QLabel(self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(250, 180, 151, 151))
-        self.label_6.setText("")
-        self.label_6.setPixmap(QtGui.QPixmap("Pictures/server.png"))
-        self.label_6.setObjectName("label_6")
-        
-        TempService.setCentralWidget(self.centralwidget)
-        self.TempServ = QtWidgets.QMenuBar(TempService)
-        self.TempServ.setGeometry(QtCore.QRect(0, 0, 924, 19))
-        self.TempServ.setObjectName("TempServ")
-        TempService.setMenuBar(self.TempServ)
-        self.statusbar = QtWidgets.QStatusBar(TempService)
-        self.statusbar.setObjectName("TempServ")
-        TempService.setStatusBar(self.statusbar)
-
-        self.retranslateUi(TempService)
-        QtCore.QMetaObject.connectSlotsByName(TempService)
-
-        # threads are used to handle the temp settings, sending server readings,
-        # and handling the server callbacks
-        temp = threading.Thread(target=self.setTemp)
-        temp.start()
-        
-        serverResponse = threading.Thread(target=self.serverResponse)
-        serverResponse.start()
-
-        serverSend = threading.Thread(target=self.serverSend)
-        serverSend.start()
-
-
-    def retranslateUi(self, TempService):
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+#
+# RetranslateUi
+#
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        TempService.setWindowTitle(_translate("TempService", "Temperature Service"))
-        self.shutDown.setText(_translate("TempService", "Shut Down"))
-        self.reboot.setText(_translate("TempService", "reboot"))
-        self.exit.setText(_translate("TempService", "Exit"))
-
-        
-    # def for setting temp and humidity data on the screen
-    def setTemp(self):
-        while True:
-            # humidity and temperature data
-
-            # printing an update to the log
-            print ('updating temp:' )
-            print ('\n')
-            print ('updating Humid: ')
-            print ('\n')
-
-            #update every second
-            time.sleep(1)
-
-
-    # def for handling the server response.
-    # When the servers are on it will change the labels.
-    def serverResponse(self):
-        print ("swag")
-
-    def serverSend(self):
-        print ("Swagger")
-        
-    def shutdownIt(self):
-        os.system('shutdown --poweroff')
-
-    def rebootIt(self):
-        os.system('reboot now')
-    
-    def closeIt(self):
-        self.close()
-        
-# end of class functions
-            
-
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+#
 # main loop
+#
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    TempService = QtWidgets.QMainWindow()
-    ui = Ui_TempService()
-    ui.setupUi(TempService)
-    TempService.show()
-
-    # timer for resyncing app
-    timer = QtCore.QTimer()
-    timer.timeout.connect(ui.setTemp)
-    timer.start(10000)
-    
+    Video = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(Video)
+    Video.show()
     sys.exit(app.exec_())
+
+
