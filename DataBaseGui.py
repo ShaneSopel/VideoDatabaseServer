@@ -1,12 +1,9 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'DatabaseVideo.ui'
-#
-# Created by: PyQt5 UI code generator 5.10.1
-#
-# WARNING! All changes made in this file will be lost!
+# Developed by Shane Sopel
+# Video Data Base Gui Main Window
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from AddDatabaseGui import Ui_Add
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -35,6 +32,7 @@ class Ui_MainWindow(object):
         self.Add_button.setDefault(False)
         self.Add_button.setFlat(False)
         self.Add_button.setObjectName("Add_button")
+        self.Add_button.clicked.connect(self.addButtonPush)
 #
 # DELETE BUTTON
 #       
@@ -103,7 +101,6 @@ class Ui_MainWindow(object):
         self.Exit_button.setIcon(icon4)
         self.Exit_button.setIconSize(QtCore.QSize(100, 80))
         self.Exit_button.setObjectName("Exit_button")
-
 #
 # SORTON LOGO
 #
@@ -125,6 +122,15 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+
+#
+# addButtonPushed 
+#
+    def addButtonPush(self):
+        add = Ui_Add(self)
+        self.Ui_Add.append()
+        Ui_Add.show()
+
 #
 # main loop
 #
