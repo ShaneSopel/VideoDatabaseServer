@@ -6,6 +6,7 @@ from AddDatabaseGui import Ui_Add
 
 
 class Ui_MainWindow(object):
+    
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(747, 600)
@@ -127,9 +128,10 @@ class Ui_MainWindow(object):
 # addButtonPushed 
 #
     def addButtonPush(self):
-        add = Ui_Add(self)
-        self.Ui_Add.append()
-        Ui_Add.show()
+        self.window = QtWidgets.QWidget()
+        self.ui = Ui_Add()
+        self.ui.setupUi(self.window)
+        self.window.show()
 
 #
 # main loop
